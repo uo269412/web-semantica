@@ -1,0 +1,31 @@
+@prefix sc: <http://purl.org/science/owl/sciencecommons/> .
+prefix :       <http://example.org/>
+prefix schema: <http://schema.org/>
+prefix dbr:    <http://dbpedia.org/resource/>    
+
+:foodArtisans a schema:RegisterAction;
+	schema:participant _:e1 ;
+    schema:location dbr:España .
+
+_:e1 a schema:Organization;
+	schema:department "AGUARDIENTES Y OTROS LICORES";
+	schema:identifier "EAA/SO-0015";
+ 	schema:legalName "LA VENTA DE TIERMES S.L.";
+  	schema:taxID "B-42133546";
+    schema:telephone "975 35 20 55";
+    schema:faxNumber "";
+    schema:email "gerente@hoteltermes.com";
+    schema:relatedLink "";
+    schema:status "ALTA";
+    schema:workLocation _:p1 ;
+   	schema:address _:a1 .
+	
+_:a1 a schema:PostalAddress;
+    schema:streetAddress "C/ YACIMIENTO ARQUEOLÃ“GICO DE TIERMES S/N";
+    schema:postalCode "42344";
+    schema:addressLocality "MONTEJO DE TIERMES";
+    schema:addressRegion dbr:SORIA ;
+    :provinceCode "SO" .
+     
+_:p1 a schema:Person;
+     schema:telephone "" .
