@@ -1,0 +1,21 @@
+prefix :       <http://example.org/>
+prefix schema: <http://schema.org/>
+prefix dbr:    <http://dbpedia.org/resource/>    
+
+:e1 a schema:Organization;
+	schema:department "AGUARDIENTES Y OTROS LICORES";
+	schema:identifier "EAA/SO-0015";
+ 	schema:legalName "LA VENTA DE TIERMES S.L.";
+  	schema:taxID "B-42133546";
+   	schema:streetAddress "C/ YACIMIENTO ARQUEOLÃ“GICO DE TIERMES S/N";
+    schema:postalCode "42344";
+    schema:addressLocality "MONTEJO DE TIERMES";
+    schema:addressRegion dbr:SORIA;
+    schema:telephone "975 35 20 55";
+   	:personalPhone "";
+    schema:personalPhone "";
+    schema:faxNumber "";
+    schema:email "gerente@hoteltermes.com";
+    schema:relatedLink "";
+    schema:status "ALTA";
+   	:provinceCode "SO" .
