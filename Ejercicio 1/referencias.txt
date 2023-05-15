@@ -4,3 +4,8 @@ https://schema.org/Organization
 https://schema.org/RegisterAction
 https://schema.org/PostalAddress
 https://schema.org/Person
+
+
+
+URL Apache Jena [Máquina Windows]: http://156.35.98.38:3030
+URL Blazegraph [Máquina Ubuntu]: http://156.35.98.37:9999
