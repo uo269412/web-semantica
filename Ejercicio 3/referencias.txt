@@ -1,0 +1,10 @@
+Consulta 1:
+    Número total de empresas que se dedican a un departamento en específico del registro mercantil
+Consulta 2:
+    Nombre de la empresa, número de teléfono de la empresa, número de teléfono del responsable. Solo aparecen como resultado aquellos que tienen un responsable con un número de teléfono.
+Consulta 3:
+    Localidad y número total de empresas que se encuentran en una situación alta dentro de esa localidad, ordenadas de mayor a menor
+Consulta 4:
+    Email y página web de aquellas empresas que tengan una página web que acabe en .es y un correo que contenga "@" "mail" y acabe en ".com"
+Consulta 5:
+    Consulta utilizando Wikidata que saca información acerca del municipio que tiene más organizaciones

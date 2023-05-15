@@ -1,0 +1,15 @@
+prefix :       <http://example.org/>
+prefix schema: <http://schema.org/>
+prefix dbr:    <http://dbpedia.org/resource/>  
+
+
+SELECT ?addressLocality (COUNT(?addressLocality) AS ?cuentaLocalidades)
+WHERE {
+  ?organization a schema:Organization ;
+               schema:status "ALTA" ;
+               schema:address ?address .
+  ?address a schema:PostalAddress ;
+           schema:addressLocality ?addressLocality .
+}
+GROUP BY ?addressLocality
+ORDER BY DESC(?cuentaLocalidades)

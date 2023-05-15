@@ -1,0 +1,10 @@
+prefix :       <http://example.org/>
+prefix schema: <http://schema.org/>
+prefix dbr:    <http://dbpedia.org/resource/>  
+
+
+SELECT ?departamento (COUNT(?empresa) AS ?departamentosTotales)
+WHERE {
+  ?empresa schema:department ?departamento .
+}
+GROUP BY ?departamento

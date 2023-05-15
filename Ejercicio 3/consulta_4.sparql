@@ -1,0 +1,14 @@
+prefix sc: <http://purl.org/science/owl/sciencecommons/> 
+prefix :       <http://example.org/>
+prefix schema: <http://schema.org/>
+prefix dbr:    <http://dbpedia.org/resource/>  
+
+
+SELECT ?correo ?paginaWeb
+WHERE {
+  ?organization a schema:Organization ;
+               schema:relatedLink ?paginaWeb ;
+               schema:email ?correo .
+  FILTER (REGEX(?correo, "@.*mail.*.com$"))
+  FILTER (STRENDS(?paginaWeb, ".es"))
+}

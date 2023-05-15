@@ -1,0 +1,16 @@
+prefix :       <http://example.org/>
+prefix schema: <http://schema.org/>
+prefix dbr:    <http://dbpedia.org/resource/>  
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix wdt: <http://www.wikidata.org/prop/direct/>
+
+SELECT ?addressRegion (COUNT(?organization) AS ?organizationCount)
+WHERE {
+  ?organization a schema:Organization ;
+               schema:address ?address .
+  ?address a schema:PostalAddress ;
+           schema:addressRegion ?addressRegion .
+}
+GROUP BY ?addressRegion
+ORDER BY DESC(?organizationCount)
+LIMIT 1
