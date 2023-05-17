@@ -1,0 +1,105 @@
+@prefix xs: <http://www.w3.org/2001/XMLSchema#> .
+@prefix db: <http://dbpedia.org/> .
+PREFIX sc: <http://purl.org/science/owl/sciencecommons/>
+PREFIX : <http://example.org/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX schema: <http://schema.org/>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+prefix dbr:    <http://dbpedia.org/resource/>  
+
+:Organization a sh:NodeShape ;
+  sh:targetClass schema:Organization ;
+  sh:property [
+    sh:path schema:department ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path schema:identifier ;
+    sh:datatype xsd:string ;
+    sh:pattern "^EAA/[A-Z]{2}-[0-9]{4}$" ;
+  ] ;
+  sh:property [
+    sh:path schema:legalName ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path schema:taxID ;
+    sh:datatype xsd:string ;
+    sh:or (
+        [
+            sh:pattern "^[A-Z]-[0-9]{8}$" ;
+        ] ,
+        [
+            sh:pattern "^[0-9]{8}-[A-Z]$" ;
+        ]
+    ) ;
+  ] ;
+  sh:property [
+    sh:path schema:telephone ;
+    sh:datatype xsd:string ;
+    sh:pattern "^[0-9]{3} [0-9]{2} [0-9]{2} [0-9]{2}$" ;
+    sh:optional true ;
+  ] ;
+  sh:property [
+    sh:path schema:faxNumber ;
+    sh:datatype xsd:string ;
+    sh:pattern "^[0-9]{3} [0-9]{2} [0-9]{2} [0-9]{2}$" ;
+    sh:optional true ;
+  ] ;
+  sh:property [
+    sh:path schema:email ;
+    sh:datatype xsd:string ;
+    sh:optional true ;
+  ] ;
+  sh:property [
+    sh:path schema:relatedLink ;
+    sh:datatype xsd:string ;
+    sh:optional true ;
+  ] ;
+  sh:property [
+    sh:path schema:status ;
+    sh:in ( "ALTA" "SUSPENDIDA" ) ;
+    sh:optional true ;
+  ] ;
+  sh:property [
+    sh:path schema:address ;
+    sh:node :PostalAddress ;
+  ] ;
+  sh:property [
+    sh:path schema:workLocation ;
+    sh:node :Person ;
+  ] .
+
+:Person a sh:NodeShape ;
+  sh:targetClass schema:Person ;
+  sh:property [
+    sh:path schema:telephone ;
+    sh:datatype xsd:string ;
+    sh:pattern "^[0-9]{3} [0-9]{2} [0-9]{2} [0-9]{2}$" ;
+    sh:optional true ;
+  ] .
+
+:PostalAddress a sh:NodeShape ;
+  sh:targetClass schema:PostalAddress ;
+  sh:property [
+    sh:path schema:streetAddress ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path schema:postalCode ;
+    sh:datatype xsd:string ;
+    sh:pattern "^[0-9]+$" ;
+  ] ;
+  sh:property [
+    sh:path schema:addressLocality ;
+  sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path schema:addressRegion ;
+    sh:class dbr: ;
+  ] ;
+  sh:property [
+    sh:path :provinceCode ;
+    sh:datatype xsd:string ;
+    sh:pattern "^[A-Z]{2}$" ;
+  ] .

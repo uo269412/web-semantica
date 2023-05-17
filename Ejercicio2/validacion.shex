@@ -1,0 +1,30 @@
+PREFIX sc: <http://purl.org/science/owl/sciencecommons/>
+prefix :       <http://example.org/>
+prefix xsd:    <http://www.w3.org/2001/XMLSchema#>
+prefix schema: <http://schema.org/>
+
+:Organization {
+ schema:department xsd:string ;
+  schema:identifier /EAA\/[A-Z]{2}-[0-9]{4}/ ;
+ schema:legalName xsd:string ;
+  schema:taxID /[A-Z]-[0-9]{8}/ OR /[0-9]{8}-[A-Z]/;
+ schema:telephone /[0-9]{3} [0-9]{2} [0-9]{2} [0-9]{2}/ ?;
+ schema:faxNumber /[0-9]{3} [0-9]{2} [0-9]{2} [0-9]{2}/ ?;
+ schema:email xsd:string ?;
+ schema:relatedLink xsd:string ?;
+ schema:status /ALTA/ OR /SUSPENDIDA/ ?;
+ schema:address @:PostalAddress ;
+ schema:workLocation @:Person
+}
+
+:Person {
+  schema:telephone /[0-9]{3} [0-9]{2} [0-9]{2} [0-9]{2}/?
+}
+
+:PostalAddress {
+ schema:streetAddress xsd:string ;
+ schema:postalCode /[0-9]+/ ;
+ schema:addressLocality xsd:string ;
+ schema:addressRegion IRI ;
+ :provinceCode /[A-Z]{2}/
+}
