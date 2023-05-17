@@ -4,7 +4,7 @@ prefix dbr:    <http://dbpedia.org/resource/>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix wdt: <http://www.wikidata.org/prop/direct/>
 
-SELECT ?addressRegion (COUNT(?organization) AS ?organizationCount)
+SELECT ?addressRegion
 WHERE {
   ?organization a schema:Organization ;
                schema:address ?address .
@@ -12,5 +12,5 @@ WHERE {
            schema:addressRegion ?addressRegion .
 }
 GROUP BY ?addressRegion
-ORDER BY DESC(?organizationCount)
+ORDER BY ASC(COUNT(?organization))
 LIMIT 1
