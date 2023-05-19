@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Aplicacion SPARQL</title>
-  <script src="jquery.min.js"></script>
-  <script src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <title>Registro mercantil</title>
 </head>
 <body>
-  <h1>Aplicacion SPARQL</h1>
-  <textarea id="query" rows="5" cols="50" placeholder="Consulta"></textarea>
-  <button onclick="enviarConsulta()">Enviar consulta</button>
+  <h1>Consulta de Registro Mercantil</h1>
+  <div>
+    <label for="department">Departamento:</label>
+    <select id="department">
+      <option value="">Todos los departamentos</option>
+      <option value="MIEL">Miel</option>
+      <option value="PRODUCTOS CÁRNICOS">Productos cárnicos</option>
+      <option value="CERVEZAS">Cervezas</option>
+      <option value="PRODUCTOS VEGETALES. FRUTAS Y HORTALIZAS">Productos vegetales. Frutas y hortalizas</option>
+      <option value="LEGUMBRES SECAS">Legumbres secas</option>
+      <option value="PRODUCTOS APÍCOLAS">Productos apícolas</option>
+      <option value="CONSERVAS Y SEMICONSERVAS VEGETALES">Conservas y semiconservas vegetales</option>
+      <option value="PRODUCTOS VEGETALES">Productos vegetales</option>
+      <option value="QUESOS">Quesos</option>
+      <option value="PASTELERÍA, BOLLERÍA Y CONFITERÍA">Pastelería, bollería y confitería</option>
+      <option value="PATATAS FRITAS">Patatas fritas</option>
+      <option value="CHOCOLATES Y DERIVADOS">Chocolates y derivados</option>
+      <option value="PAN, PASTELERÍA, BOLLERÍA Y CONFITERÍA">Pan, pastelería, bollería y confitería</option>
+      <option value="AGUARDIENTES Y OTROS LICORES">Aguardientes y otros licores</option>
+      <option value="QUESOS, CUAJADA, YOGUR">Quesos, cuajada, yogur</option>
+      <option value="QUESOS, YOGUR">Quesos, yogur</option>
+      <option value="CONSERVAS VEGETALES Y DE FRUTAS">Conservas vegetales y de frutas</option>
+      <option value="BEBIDAS ALCOHÓLICAS">Bebidas alcohólicas</option>
+      <option value="CONSERVAS Y SEMICONSERVAS DE PESCADO">Conservas y semiconservas de pescado</option>
+      <option value="FRUTAS Y HORTALIZAS FRESCAS">Frutas y hortalizas frescas</option>
+      <option value="PAN Y PANES ESPECIALES">Pan y panes especiales</option>
+      <option value="HELADOS">Helados</option>
+      <option value="COMIDA PREPARADA">Comida preparada</option>
+      <option value="SIDRA">Sidra</option>
+      <option value="LEGUMBRES SECAS Y PLATOS PREPARADOS">Legumbres secas y platos preparados</option>
+      <option value="SIDRA Y LICORES">Sidra y licores</option>
+      <option value="CONSERVAS VEGETALES">Conservas vegetales</option>
+      <option value="HORTALIZAS">Hortalizas</option>
+      <option value="CONFITERÍA">Confitería</option>
+      <option value="BEBIDAS REFRESCANTES">Bebidas refrescantes</option>
+      <option value="CONSERVAS Y PLATOS PREPARADOS">Conservas y platos preparados</option>
+      <option value="PASTELERÍA, BOLLERÍA Y CONFITERÍA Y HELADOS">Pastelería, bollería y confitería y helados</option>
+      <option value="CONSERVAS Y SEMICONSERVAS PESCADO">Conservas y semiconservas pescado</option>
+      <option value="PRODUCTOS APERITIVOS">Productos aperitivos</option>
+      <option value="PANADERIA, BOLLERIA Y CONFITERIA. CHOCOLATES">Panadería, bollería y confitería. Chocolates</option>
+      <option value="QUESOS, REQUESÓN">Quesos, requesón</option>
+    </select>
+    <label for="addressLocality">Localidad:</label>
+    <input type="text" id="addressLocality" placeholder="LEÓN, MADRID, VALLADOLID, BURGOS">
+    <button onclick="ejecutarConsulta()">Enviar Consulta</button>
+  </div>
   <div id="resultado"></div>
+
+  <script src="script.js"></script>
 </body>
 </html>
