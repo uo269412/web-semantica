@@ -16,7 +16,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
     sh:path schema:identifier ;
     sh:datatype xsd:string ;
     sh:minCount 1; sh:maxCount 1;
-    sh:pattern "^EAA/SA-[0-9]{4}$" ;
+    sh:pattern "^EAA/[A-Z]{2}-[0-9]{4}$" ;
   ] ;
   sh:property [
     sh:path schema:legalName ;
@@ -27,7 +27,14 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
     sh:path schema:taxID ;
     sh:datatype xsd:string ;
     sh:minCount 1; sh:maxCount 1;
-    sh:pattern "^B-[0-9]{8}$" ;
+    sh:or (
+        [
+            sh:pattern "^[A-Z]-[0-9]{8}$" ;
+        ] ,
+        [
+            sh:pattern "^[0-9]{8}-[A-Z]$" ;
+        ]
+    ) ;
   ] ;
   sh:property [
     sh:path schema:telephone ;
@@ -91,7 +98,7 @@ PREFIX sh: <http://www.w3.org/ns/shacl#>
     sh:path schema:postalCode ;
     sh:datatype xsd:string ;
     sh:minCount 1; sh:maxCount 1;
-    sh:pattern "^[0-9]{5}$" ;
+    sh:pattern "^[0-9]+$" ;
   ] ;
   sh:property [
     sh:path schema:addressLocality ;
