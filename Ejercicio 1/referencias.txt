@@ -1,11 +1,17 @@
-Enlace al CSV: https://data.europa.eu/data/datasets/https-datosabiertos-jcyl-es-web-jcyl-set-es-comercio-artesanosalimentarios-1284266159759?locale=en
+Enlace al CSV: 
+https://data.europa.eu/data/datasets/https-datosabiertos-jcyl-es-web-jcyl-set-es-comercio-artesanosalimentarios-1284266159759?locale=en
 
+Schemas utilizados:
 https://schema.org/Organization
 https://schema.org/RegisterAction
 https://schema.org/PostalAddress
 https://schema.org/Person
 
+Solo se ha creado un atributo sin esquema, siendo este provinceCode
 
 
-URL Apache Jena [Máquina Windows]: http://156.35.98.38:3030
-URL Blazegraph [Máquina Ubuntu]: http://156.35.98.37:9999
+Despliegues:
+URL Apache Jena [Máquina Windows]: 
+http://156.35.98.38:3030
+URL Blazegraph [Máquina Ubuntu]: 
+http://156.35.98.37:9999

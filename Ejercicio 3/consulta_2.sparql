@@ -1,15 +1,16 @@
 prefix :       <http://example.org/>
 prefix schema: <http://schema.org/>
 prefix dbr:    <http://dbpedia.org/resource/>  
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix wdt: <http://www.wikidata.org/prop/direct/>
 
-
-SELECT ?nombreLocalidad (COUNT(?nombreLocalidad) AS ?cuentaLocalidades)
+SELECT ?addressRegion
 WHERE {
   ?organization a schema:Organization ;
-               schema:status "ALTA" ;
                schema:address ?address .
   ?address a schema:PostalAddress ;
-           schema:addressLocality ?nombreLocalidad .
+           schema:addressRegion ?addressRegion .
 }
-GROUP BY ?nombreLocalidad
-ORDER BY DESC(?cuentaLocalidades)
+GROUP BY ?addressRegion
+ORDER BY ASC(COUNT(?organization))
+LIMIT 1
